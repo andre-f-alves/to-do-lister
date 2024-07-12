@@ -4,3 +4,89 @@
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+header {
+  height: 60px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: max-content;
+  height: 100%;
+}
+
+.logo {
+  width: 45px;
+  margin: 0 5px;
+}
+
+h1 {
+  margin: 0 5px;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.sidebar {
+  position: absolute;
+  top: 60px;
+  transform: translateX(-100%);
+  width: 70vw;
+  max-width: 270px;
+  height: calc(100% - 60px);
+  border: 1px solid black;
+  background-color: white;
+  transition: transform .4s ease-in-out;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.menu-button {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+}
+
+.new-list-button {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+
+.to-do-lists {
+  padding: 10px;
+  padding-left: 25px;
+  border: 1px solid black;
+}
+
+main {
+  height: calc(100% - 60px);
+  padding-top: 40px;
+  background-color: lightgray;
+}
+
+.text-editor {
+  width: 90vw;
+  max-width: 800px;
+  height: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+.icon {
+  width: 100%;
+  fill: black;
+}

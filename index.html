@@ -4,12 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do Lister</title>
+  <link rel="shortcut icon" href="./static/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./static/styles/globals.css">
 </head>
 <body>
   <header>
-    <h1>To-Do Lister</h1>
+    <div class="title-container">
+      <img src="./static/images/to-do-lister-logo.png" alt="To-Do Lister Logo" class="logo">
+      <h1>To-Do Lister</h1>
+    </div>
   </header>
+
+  <aside id="sidebar" class="sidebar">
+    <button type="button" id="menu-button" class="menu-button">
+      <img src="./static/svgs/menu.svg" alt="Menu" id="menu-icon" class="icon">
+    </button>
+
+    <button type="submit" class="new-list-button">
+      <img src="./static/svgs/add.svg" alt="Nova lista" class="icon">
+    </button>
+
+    <ul class="to-do-lists">
+      <li class="to-do-list">list1</li>
+      <li class="to-do-list">list2</li>
+      <li class="to-do-list">list3</li>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="text-editor" contenteditable></div>
+  </main>
 
   <script src="./static/scripts/main.js"></script>
 </body>
