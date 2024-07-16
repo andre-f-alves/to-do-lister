@@ -1,5 +1,5 @@
-const sidebar = document.querySelector('#sidebar')
-const menuButton = document.querySelector('#menu-button')
+const sidebar = document.querySelector('.sidebar')
+const menuButton = document.querySelector('.menu-button')
 
 menuButton.addEventListener('click', function() {
   const icon = this.firstElementChild
