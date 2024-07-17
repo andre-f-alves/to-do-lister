@@ -15,29 +15,34 @@
     </div>
   </header>
 
-  <aside class="sidebar">
-    <button type="button" class="menu-button">
-      <img src="./static/svgs/menu.svg" alt="Menu" class="icon">
-    </button>
+  <div class="main-page-container">
+    <aside class="sidebar-container">
 
-    <button type="button" class="new-list-button">
-      <img src="./static/svgs/add.svg" alt="Nova lista" class="icon">
-    </button>
+      <button type="button" class="menu-button">
+        <img src="./static/svgs/open-sidebar.svg" alt="Menu" id="sb-ctrl-icon" class="icon">
+      </button>
+      
+      <div class="sidebar">
+        <button type="button" class="new-list-button">
+          <img src="./static/svgs/add.svg" alt="Nova lista" class="icon">
+        </button>
 
-    <ul class="to-do-lists">
-      <li class="to-do-list">list1</li>
-      <li class="to-do-list">list2</li>
-      <li class="to-do-list">list3</li>
-    </ul>
-  </aside>
+        <ul class="to-do-lists">
+          <li class="to-do-list">list1</li>
+          <li class="to-do-list">list2</li>
+          <li class="to-do-list">list3</li>
+        </ul>
+      </div>
+    </aside>
 
-  <main>
-    <div class="ribbon"></div>
-
-    <div class="editor-container">
-      <div class="text-editor" contenteditable></div>
-    </div>
-  </main>
+    <main>
+      <div class="ribbon">
+      </div>
+      <div class="editor-container">
+        <div class="text-editor" contenteditable></div>
+      </div>
+    </main>
+  </div>
 
   <script src="./static/scripts/main.js"></script>
 </body>
