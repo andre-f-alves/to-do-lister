@@ -3,6 +3,8 @@
 :root {
   --header-height: 60px;
   --sidebar-width: min(70vw, 270px);
+  
+  --hover-color: #e2e2e2;
 }
 
 * {
@@ -60,7 +62,6 @@ h1 {
   width: var(--sidebar-width);
   height: 100%;
   padding: 7px;
-  border: 1px solid black;
   background-color: white;
 }
 
@@ -68,23 +69,12 @@ h1 {
   transform: translateX(0);
 }
 
-.menu-button {
-  float: right;
-  width: 40px;
-  height: 40px;
+button {
   cursor: pointer;
 }
 
-.new-list-button {
-  width: 35px;
-  height: 35px;
-  margin: 5px;
-  border-radius: 100%;
-  border: none;
-  background-image: linear-gradient(135deg, #fd7948, #ff4500, #cf3700);
-}
-
-button:has(.icon) {
+button:has(.icon),
+.folder-icon-container {
   position: relative;
 }
 
@@ -97,9 +87,125 @@ button:has(.icon) {
   height: 100%;
 }
 
-.to-do-lists {
+.menu-button {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-button:hover {
+  background-color: var(--hover-color);
+}
+
+.sidebar-actions {
+  padding: 5px;
+}
+
+#new-list-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.new-list-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 100%;
+  background-image: linear-gradient(135deg, #ff8457, #ff4500, #b63000);
+}
+
+.new-list-button:hover {
+  filter: brightness(.9);
+}
+
+.list-container::after {
+  content: "";
+  display: block;
+  width: 75%;
+  height: 1px;
+  margin: 25px auto;
+  background-color: lightgray;
+
+}
+
+.list-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 10px;
-  padding-left: 25px;
+  list-style-type: none;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+}
+
+.list-item:hover {
+  background-color: var(--hover-color);
+}
+
+.list-button {
+  flex-grow: 1;
+  height: 100%;
+  padding: 3px;
+  border: none;
+  font-size: 1em;
+  text-align: left;
+  background-color: transparent;
+}
+
+.list-button:hover {
+  text-decoration: underline;
+}
+
+.list-actions {
+  padding: 3px;
+  line-height: 0;
+}
+
+.del-list-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+}
+
+.del-list-btn:hover {
+  background-color: #ff0000b7;
+}
+
+.general-folders {
+  padding: 10px;
+}
+
+.folder-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.folder-link:hover {
+  text-decoration: underline;
+  background-color: var(--hover-color);
+}
+
+.folder-icon-container {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 0;
+}
+
+.folder-label {
+  flex-grow: 1;
 }
 
 main {

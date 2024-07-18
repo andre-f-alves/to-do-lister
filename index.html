@@ -23,15 +23,47 @@
       </button>
       
       <div class="sidebar">
-        <button type="button" class="new-list-button">
-          <img src="./static/svgs/add.svg" alt="Nova lista" class="icon">
-        </button>
 
-        <ul class="to-do-lists">
-          <li class="to-do-list">list1</li>
-          <li class="to-do-list">list2</li>
-          <li class="to-do-list">list3</li>
-        </ul>
+        <div class="sidebar-actions">
+          <button type="button" class="new-list-button">
+            <img src="./static/svgs/add.svg" alt="Nova lista" id="new-list-icon" class="icon">
+          </button>
+        </div>
+
+        <div class="list-container">
+          <ul class="list-menu">
+
+            <li class="list-item">
+              <button type="button" class="list-button">List 1</button>
+
+              <span class="list-actions">
+                <button type="button" class="del-list-btn">
+                  <img src="./static/svgs/delete.svg" alt="Excluir" class="icon del-list-icon">
+                </button>
+              </span>
+            </li>
+
+            <li class="list-item">
+              <button type="button" class="list-button">List 2</button>
+
+              <span class="list-actions">
+                <button type="button" class="del-list-btn">
+                  <img src="./static/svgs/delete.svg" alt="Excluir" class="icon del-list-icon">
+                </button>
+              </span>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="general-folders">
+          <a href="#" class="folder-link">
+            <span class="folder-icon-container">
+              <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon folder-icon">
+            </span>
+            <span class="folder-label">Lixeira</span>
+          </a>
+        </div>
       </div>
     </aside>
 
