@@ -143,6 +143,8 @@ button:has(.icon),
   justify-content: space-between;
   align-items: center;
   gap: 5px;
+  width: 100%;
+  height: 31px;
   text-align: left;
 }
 
@@ -157,6 +159,9 @@ button:has(.icon),
   border: none;
   font-size: 1em;
   text-align: left;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
   background-color: transparent;
 }
 
@@ -165,8 +170,13 @@ button:has(.icon),
 }
 
 .list-actions {
+  display: none;
   padding: 3px;
   line-height: 0;
+}
+
+.list-item:hover .list-actions {
+  display: block;
 }
 
 .del-list-btn {

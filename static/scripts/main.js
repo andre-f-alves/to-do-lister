@@ -6,7 +6,14 @@ menuButton.addEventListener('click', function() {
   const url = new URL(icon.src)
   const filePath = url.pathname.split('/')
 
-  filePath[filePath.length - 1] = filePath[filePath.length - 1] === 'open-sidebar.svg' ? 'close-sidebar.svg' : 'open-sidebar.svg'
+  if (filePath[filePath.length - 1] === 'open-sidebar.svg') {
+    filePath[filePath.length - 1] = 'close-sidebar.svg'
+    this.title = this.title.replace('Abrir', 'Fechar')
+
+  } else {
+    filePath[filePath.length - 1] = 'open-sidebar.svg'
+    this.title = this.title.replace('Fechar', 'Abrir')
+  }
 
   url.pathname = filePath.join('/')
   icon.src = url.toString()
