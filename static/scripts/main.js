@@ -27,10 +27,6 @@ function addFile() {
   const fileList = document.getElementById('file-list')
   const template = document.getElementById('file-list-item-template')
   const fileListItemTemplate = template.content.querySelector('.file-list-item')
-
-  if (document.getElementById('empty-message')) {
-    fileList.removeChild(document.getElementById('empty-message'))
-  }
   
   let fileName
   do {
@@ -43,6 +39,10 @@ function addFile() {
 
   fileLink.textContent = fileName
   fileLink.title = fileName
+
+  if (document.getElementById('empty-message')) {
+    fileList.removeChild(document.getElementById('empty-message'))
+  }
 
   fileList.appendChild(fileListItem)
 }
