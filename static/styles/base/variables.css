@@ -1,0 +1,6 @@
+:root {
+  --header-height: 60px;
+  --sidebar-width: min(70vw, 270px);
+  
+  --hover-color: #e2e2e2;
+}

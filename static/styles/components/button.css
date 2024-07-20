@@ -1,0 +1,8 @@
+button {
+  cursor: pointer;
+}
+
+button:has(.icon),
+.folder-icon-container {
+  position: relative;
+}

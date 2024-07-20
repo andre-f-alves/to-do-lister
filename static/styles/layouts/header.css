@@ -1,0 +1,23 @@
+header {
+  height: var(--header-height);
+  cursor: default;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: max-content;
+  height: 100%;
+}
+
+.logo {
+  width: 45px;
+  margin: 0 5px;
+}
+
+h1 {
+  margin: 0 5px;
+  font-size: 1.7em;
+  font-weight: normal;
+}
