@@ -8,6 +8,10 @@
   transition: transform .4s ease-in-out;
 }
 
+.sidebar-container.active {
+  transform: translateX(0);
+}
+
 .sidebar {
   display: inline-block;
   width: var(--sidebar-width);
@@ -16,11 +20,7 @@
   background-color: white;
 }
 
-.sidebar-container.active {
-  transform: translateX(0);
-}
-
-.menu-button {
+#menu-button {
   float: right;
   width: 40px;
   height: 40px;
@@ -28,20 +28,11 @@
   background-color: transparent;
 }
 
-.menu-button:hover {
-  background-color: var(--hover-color);
-}
-
 .sidebar-actions {
   padding: 5px;
 }
 
-#new-list-icon {
-  width: 30px;
-  height: 30px;
-}
-
-.new-list-button {
+#new-list-button {
   width: 35px;
   height: 35px;
   border: none;
@@ -49,11 +40,12 @@
   background-image: linear-gradient(135deg, #ff8457, #ff4500, #b63000);
 }
 
-.new-list-button:hover {
-  filter: brightness(.9);
+#new-list-icon {
+  width: 30px;
+  height: 30px;
 }
 
-.list-container::after {
+.file-list-container::after {
   content: "";
   display: block;
   width: 75%;
@@ -62,7 +54,7 @@
   background-color: lightgray;
 }
 
-.list-menu {
+#file-list {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -70,7 +62,14 @@
   list-style-type: none;
 }
 
-.list-item {
+#empty-message {
+  font-size: .9em;
+  text-align: center;
+  color: #636363;
+  cursor: default;
+}
+
+.file-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,11 +79,7 @@
   text-align: left;
 }
 
-.list-item:hover {
-  background-color: var(--hover-color);
-}
-
-.list-button {
+.file-link {
   flex-grow: 1;
   height: 100%;
   padding: 3px;
@@ -97,29 +92,17 @@
   background-color: transparent;
 }
 
-.list-button:hover {
-  text-decoration: underline;
-}
-
-.list-actions {
+.file-actions {
   display: none;
   padding: 3px;
   line-height: 0;
 }
 
-.list-item:hover .list-actions {
-  display: block;
-}
-
-.del-list-btn {
+.file-delete-button {
   width: 25px;
   height: 25px;
   border: none;
   background-color: transparent;
-}
-
-.del-list-btn:hover {
-  background-color: #ff0000b7;
 }
 
 .general-folders {
@@ -134,11 +117,6 @@
   color: black;
 }
 
-.folder-link:hover {
-  text-decoration: underline;
-  background-color: var(--hover-color);
-}
-
 .folder-icon-container {
   display: inline-block;
   width: 30px;
@@ -148,4 +126,35 @@
 
 .folder-label {
   flex-grow: 1;
+}
+
+@media screen and (hover: hover) {
+  #menu-button:hover {
+    background-color: var(--hover-color);
+  }
+
+  #new-list-button:hover {
+    filter: brightness(.9);
+  }
+
+  .file-list-item:hover {
+    background-color: var(--hover-color);
+  }
+
+  .file-link:hover {
+    text-decoration: underline;
+  }
+
+  .file-list-item:hover .file-actions {
+    display: block;
+  }
+
+  .file-delete-button:hover {
+    background-color: #ff0000b7;
+  }
+
+  .folder-link:hover {
+    text-decoration: underline;
+    background-color: var(--hover-color);
+  }
 }
