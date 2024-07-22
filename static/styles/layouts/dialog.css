@@ -1,0 +1,66 @@
+#file-name-dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(270px, 30vw, 430px);
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.title-dialog {
+  font-size: 1.4em;
+}
+
+#file-name {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  margin: 15px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: .9em;
+  box-shadow: none;
+}
+
+#file-name:focus{
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.form-button {
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+#submit-button {
+  border: 2px solid var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+#submit-button:disabled {
+  border-color: var(--disabled-button-color);
+  background-color: var(--disabled-button-color);
+  cursor: default;
+}
+
+#cancel-button {
+  border: 2px solid var(--accent-color);
+  background-color: white;
+}
+
+@media screen and (hover: hover) {
+  #submit-button:enabled:hover,
+  #cancel-button:hover {
+    filter: brightness(.9);
+  }
+}

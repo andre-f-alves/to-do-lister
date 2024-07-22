@@ -2,5 +2,8 @@
   --header-height: 60px;
   --sidebar-width: min(70vw, 270px);
   
+  --accent-color: #ff4500;
+  --accent-color-gradient: linear-gradient(135deg, #ff8457, var(--accent-color), #b63000);
   --hover-color: #e2e2e2;
+  --disabled-button-color: #c5c5c5;
 }

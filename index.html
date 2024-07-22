@@ -8,67 +8,84 @@
   <link rel="stylesheet" href="./static/styles/main.css">
 </head>
 <body>
-  <header>
-    <div class="title-container">
-      <img src="./static/images/to-do-lister-logo.png" alt="To-Do Lister Logo" class="logo">
-      <h1>To-Do Lister</h1>
+  <div class="page-layout">
+    <header>
+      <div class="heading-container">
+        <img src="./static/images/to-do-lister-logo.png" alt="To-Do Lister Logo" class="logo">
+        <h1>To-Do Lister</h1>
+      </div>
+    </header>
+
+    <div class="main-content-container">
+      <aside id="sidebar" class="sidebar">
+        
+        <button type="button" id="menu-button" title="Abrir barra lateral">
+          <img src="./static/svgs/open-sidebar.svg" alt="Menu" class="icon">
+        </button>
+    
+        <div class="sidebar-main-content-container">
+          
+          <div class="sidebar-actions">
+            <button type="button" id="new-file-button" title="Criar novo arquivo">
+              <img src="./static/svgs/add.svg" alt="Novo arquivo" class="icon">
+            </button>
+          </div>
+
+          <div class="file-list-container">
+            <ul id="file-list">
+
+              <div id="empty-message">Seus arquivos aparecerão aqui.</div>
+
+            </ul>
+          </div>
+
+          <div class="general-folders">
+            <a href="#" class="folder-link">
+              <span class="folder-icon-container">
+                <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon folder-icon">
+              </span>
+              <span class="folder-label">Lixeira</span>
+            </a>
+          </div>
+
+        </div>
+      </aside>
+
+      <main>
+        <div class="ribbon"></div>
+
+        <div class="editor-container">
+          <div class="text-editor" contenteditable></div>
+        </div>
+      </main>
     </div>
-  </header>
-
-  <div class="main-page-container">
-    <aside id="sidebar" class="sidebar-container">
-
-      <button type="button" id="menu-button" title="Abrir barra lateral">
-        <img src="./static/svgs/open-sidebar.svg" alt="Menu" id="sidebar-control-icon" class="icon">
-      </button>
-      
-      <div class="sidebar">
-
-        <div class="sidebar-actions">
-          <button type="button" id="new-list-button" title="Criar nova lista">
-            <img src="./static/svgs/add.svg" alt="Nova lista" id="new-list-icon" class="icon">
-          </button>
-        </div>
-
-        <div class="file-list-container">
-          <ul id="file-list">
-
-            <div id="empty-message">Seus arquivos aparecerão aqui.</div>
-
-            <template id="file-list-item-template">
-              <li class="file-list-item">
-                <button type="button" class="file-link"></button>
-  
-                <span class="file-actions">
-                  <button type="button" class="file-delete-button" title="Enviar para a lixeira">
-                    <img src="./static/svgs/delete.svg" alt="Excluir" class="icon file-delete-icon">
-                  </button>
-                </span>
-              </li>
-            </template>
-
-          </ul>
-        </div>
-
-        <div class="general-folders">
-          <a href="#" class="folder-link">
-            <span class="folder-icon-container">
-              <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon folder-icon">
-            </span>
-            <span class="folder-label">Lixeira</span>
-          </a>
-        </div>
-      </div>
-    </aside>
-
-    <main>
-      <div class="ribbon">
-      </div>
-      <div class="editor-container">
-        <div class="text-editor" contenteditable></div>
-      </div>
-    </main>
   </div>
+
+  <dialog id="file-name-dialog">
+    <p class="title-dialog">Novo arquivo</p>
+
+    <form method="dialog">
+      <input type="text" name="file-name" id="file-name" placeholder="Digite o nome do arquivo.">
+
+      <div class="form-button-container">
+        <button type="submit" id="submit-button" disabled class="form-button">Salvar</button>
+        <button type="reset" id="cancel-button" class="form-button">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- template for file list -->
+  <template id="file-list-item-template">
+    <li class="file-list-item">
+      <button type="button" class="file-link"></button>
+
+      <span class="file-actions">
+        <button type="button" class="file-delete-button" title="Excluir">
+          <img src="./static/svgs/delete.svg" alt="Excluir" class="icon file-delete-icon">
+        </button>
+      </span>
+    </li>
+  </template>
 
   <script src="./static/scripts/main.js"></script>
 </body>

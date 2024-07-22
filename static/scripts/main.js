@@ -1,10 +1,14 @@
 const menuButton = document.getElementById('menu-button')
-const newListButton = document.getElementById('new-list-button')
+const newFileButton = document.getElementById('new-file-button')
+const fileNameDialog = document.getElementById('file-name-dialog')
+const inputFileName = document.getElementById('file-name')
+const submitButton = document.getElementById('submit-button')
+const cancelButton = document.getElementById('cancel-button')
 
 function changeSidebarVisibility() {
   const sidebar = document.getElementById('sidebar')
 
-  const icon = document.getElementById('sidebar-control-icon')
+  const icon = this.firstElementChild
   const url = new URL(icon.src)
   const filePath = url.pathname.split('/')
 
@@ -23,22 +27,16 @@ function changeSidebarVisibility() {
   sidebar.classList.toggle('active')
 }
 
-function addFile() {
+function addFile(file) {
   const fileList = document.getElementById('file-list')
   const template = document.getElementById('file-list-item-template')
   const fileListItemTemplate = template.content.querySelector('.file-list-item')
-  
-  let fileName
-  do {
-    fileName = prompt('Digite um nome para o arquivo:').trim()
-    if (fileName === null) return
-  } while (!fileName)
 
   const fileListItem = document.importNode(fileListItemTemplate, true)
   const fileLink = fileListItem.firstElementChild
 
-  fileLink.textContent = fileName
-  fileLink.title = fileName
+  fileLink.textContent = file
+  fileLink.title = file
 
   if (document.getElementById('empty-message')) {
     fileList.removeChild(document.getElementById('empty-message'))
@@ -48,4 +46,33 @@ function addFile() {
 }
 
 menuButton.addEventListener('click', function() { changeSidebarVisibility.call(this) })
-newListButton.addEventListener('click', () => addFile())
+
+newFileButton.addEventListener('click', () => fileNameDialog.showModal())
+
+inputFileName.addEventListener('input', function() {
+  if (this.value.trim()) {
+    submitButton.removeAttribute('disabled')
+
+  } else {
+    submitButton.setAttribute('disabled', '')
+  }
+})
+
+cancelButton.addEventListener('click', () => fileNameDialog.close())
+
+submitButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  const fileName = inputFileName.value.trim()
+
+  if (!fileName) {
+    inputFileName.value = ''
+    return
+  }
+
+  fileNameDialog.close(fileName)
+  inputFileName.value = ''
+})
+
+fileNameDialog.addEventListener('close', function() {
+  if (this.returnValue) addFile(this.returnValue)
+})

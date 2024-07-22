@@ -5,7 +5,11 @@
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-html,
 body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-layout {
   height: 100%;
 }

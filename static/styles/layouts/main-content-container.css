@@ -1,4 +1,4 @@
-.main-page-container {
+.main-content-container {
   position: relative;
   height: calc(100% - var(--header-height));
 }

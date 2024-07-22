@@ -1,4 +1,4 @@
-.sidebar-container {
+.sidebar {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,11 +8,11 @@
   transition: transform .4s ease-in-out;
 }
 
-.sidebar-container.active {
+.sidebar.active {
   transform: translateX(0);
 }
 
-.sidebar {
+.sidebar-main-content-container {
   display: inline-block;
   width: var(--sidebar-width);
   height: 100%;
@@ -32,26 +32,22 @@
   padding: 5px;
 }
 
-#new-list-button {
+#new-file-button {
   width: 35px;
   height: 35px;
   border: none;
   border-radius: 100%;
-  background-image: linear-gradient(135deg, #ff8457, #ff4500, #b63000);
+  background-image: var(--accent-color-gradient);
 }
 
-#new-list-icon {
+#new-file-button > .icon {
   width: 30px;
   height: 30px;
 }
 
-.file-list-container::after {
-  content: "";
-  display: block;
-  width: 75%;
-  height: 1px;
-  margin: 25px auto;
-  background-color: lightgray;
+.file-list-container {
+  max-height: 70%;
+  overflow-y: auto;
 }
 
 #file-list {
@@ -107,6 +103,16 @@
 
 .general-folders {
   padding: 10px;
+  padding-top: 0;
+}
+
+.general-folders::before {
+  content: "";
+  display: block;
+  width: 75%;
+  height: 1px;
+  margin: 25px auto;
+  background-color: lightgray;
 }
 
 .folder-link {
@@ -133,7 +139,7 @@
     background-color: var(--hover-color);
   }
 
-  #new-list-button:hover {
+  #new-file-button:hover {
     filter: brightness(.9);
   }
 
