@@ -41,8 +41,8 @@
 }
 
 #new-file-button > .icon {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
 }
 
 .file-list-container {
@@ -56,13 +56,6 @@
   gap: 5px;
   padding: 10px;
   list-style-type: none;
-}
-
-#empty-message {
-  font-size: .9em;
-  text-align: center;
-  color: #636363;
-  cursor: default;
 }
 
 .file-list-item {
@@ -137,10 +130,6 @@
 @media screen and (hover: hover) {
   #menu-button:hover {
     background-color: var(--hover-color);
-  }
-
-  #new-file-button:hover {
-    filter: brightness(.9);
   }
 
   .file-list-item:hover {

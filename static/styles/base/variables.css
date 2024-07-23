@@ -1,9 +1,9 @@
 :root {
   --header-height: 60px;
-  --sidebar-width: min(70vw, 270px);
+  --sidebar-width: min(270px, 70vw);
   
   --accent-color: #ff4500;
   --accent-color-gradient: linear-gradient(135deg, #ff8457, var(--accent-color), #b63000);
-  --hover-color: #e2e2e2;
+  --hover-color: #ececec;
   --disabled-button-color: #c5c5c5;
 }

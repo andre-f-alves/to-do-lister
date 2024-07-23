@@ -2,7 +2,28 @@ button {
   cursor: pointer;
 }
 
+button:enabled:active {
+  filter: brightness(.7) !important;
+}
+
+button:enabled:focus-visible {
+  filter: brightness(.9);
+  outline: none;
+}
+
+button:disabled {
+  border-color: var(--disabled-button-color) !important;
+  background-color: var(--disabled-button-color) !important;
+  cursor: default;
+}
+
 button:has(.icon),
 .folder-icon-container {
   position: relative;
+}
+
+@media screen and (hover: hover) {
+  button:enabled:hover {
+    filter: brightness(.9);
+  }
 }

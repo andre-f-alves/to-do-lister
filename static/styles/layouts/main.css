@@ -3,11 +3,20 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
   gap: 30px;
   height: 100%;
   padding-top: 50px;
   background-color: lightgray;
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    transition: margin-left .4s ease-in-out;
+  }
+
+  .sidebar.active ~ main {
+    margin-left: var(--sidebar-width);
+  }
 }
 
 .ribbon {
@@ -26,4 +35,5 @@ main {
 .text-editor {
   width: 100%;
   height: 100%;
+  padding: 30px;
 }

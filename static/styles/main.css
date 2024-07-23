@@ -5,6 +5,7 @@
 
 @import url('components/button.css');
 @import url('components/icon.css');
+@import url('components/empty-message.css');
 
 @import url('layouts/header.css');
 @import url('layouts/main-content-container.css');

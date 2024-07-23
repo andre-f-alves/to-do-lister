@@ -1,11 +1,11 @@
 const menuButton = document.getElementById('menu-button')
 const newFileButton = document.getElementById('new-file-button')
 const fileNameDialog = document.getElementById('file-name-dialog')
-const inputFileName = document.getElementById('file-name')
+const fileNameInput = document.getElementById('file-name-input')
 const submitButton = document.getElementById('submit-button')
 const cancelButton = document.getElementById('cancel-button')
 
-function changeSidebarVisibility() {
+function toggleSidebarVisibility() {
   const sidebar = document.getElementById('sidebar')
 
   const icon = this.firstElementChild
@@ -38,18 +38,18 @@ function addFile(file) {
   fileLink.textContent = file
   fileLink.title = file
 
-  if (document.getElementById('empty-message')) {
-    fileList.removeChild(document.getElementById('empty-message'))
+  if (document.getElementById('empty-list-message')) {
+    fileList.removeChild(document.getElementById('empty-list-message'))
   }
 
   fileList.appendChild(fileListItem)
 }
 
-menuButton.addEventListener('click', function() { changeSidebarVisibility.call(this) })
+menuButton.addEventListener('click', function() { toggleSidebarVisibility.call(this) })
 
 newFileButton.addEventListener('click', () => fileNameDialog.showModal())
 
-inputFileName.addEventListener('input', function() {
+fileNameInput.addEventListener('input', function() {
   if (this.value.trim()) {
     submitButton.removeAttribute('disabled')
 
@@ -62,17 +62,20 @@ cancelButton.addEventListener('click', () => fileNameDialog.close())
 
 submitButton.addEventListener('click', (event) => {
   event.preventDefault()
-  const fileName = inputFileName.value.trim()
+  const fileName = fileNameInput.value.trim()
 
   if (!fileName) {
-    inputFileName.value = ''
+    fileNameInput.value = ''
     return
   }
 
   fileNameDialog.close(fileName)
-  inputFileName.value = ''
+  fileNameInput.value = ''
 })
 
 fileNameDialog.addEventListener('close', function() {
-  if (this.returnValue) addFile(this.returnValue)
+  if (this.returnValue) {
+    addFile(this.returnValue)
+    this.returnValue = ''
+  }
 })
