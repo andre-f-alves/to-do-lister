@@ -19,14 +19,14 @@
     <div class="main-content-container">
       <aside id="sidebar" class="sidebar">
         
-        <button type="button" id="menu-button" title="Abrir barra lateral">
+        <button type="button" id="menu-button" class="menu-button" title="Abrir barra lateral">
           <img src="./static/svgs/open-sidebar.svg" alt="Menu" class="icon">
         </button>
     
         <div class="sidebar-main-content-container">
           
           <div class="sidebar-actions">
-            <button type="button" id="new-file-button" title="Criar novo arquivo">
+            <button type="button" id="new-file-button" class="new-file-button" title="Criar novo arquivo">
               <img src="./static/svgs/add.svg" alt="Novo arquivo" class="icon">
             </button>
           </div>
@@ -34,7 +34,7 @@
           <div class="file-list-container">
             <ul id="file-list">
 
-              <div id="empty-list-message" class="empty-message">Seus arquivos aparecerão aqui.</div>
+              <div class="empty-message">Seus arquivos aparecerão aqui.</div>
 
             </ul>
           </div>
@@ -42,7 +42,7 @@
           <div class="general-folders">
             <a href="#" class="folder-link">
               <span class="folder-icon-container">
-                <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon folder-icon">
+                <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon">
               </span>
               <span class="folder-label">Lixeira</span>
             </a>
@@ -69,22 +69,26 @@
 
       <div class="form-button-container">
         <button type="submit" id="submit-button" disabled class="form-button">Salvar</button>
-        <button type="reset" id="cancel-button" class="form-button">Cancelar</button>
+        <button type="reset" id="cancel-button" class="form-button cancel-button">Cancelar</button>
       </div>
     </form>
   </dialog>
 
-  <!-- template for file list -->
+  <!-- template section -->
   <template id="file-list-item-template">
     <li class="file-list-item">
       <button type="button" class="file-link"></button>
 
       <span class="file-actions">
-        <button type="button" class="file-delete-button" title="Excluir">
-          <img src="./static/svgs/delete.svg" alt="Excluir" class="icon file-delete-icon">
+        <button type="button" class="more-actions-button" title="Mais ações">
+          <img src="./static/svgs/more-actions.svg" alt="Mais ações" class="icon">
         </button>
       </span>
     </li>
+  </template>
+
+  <template id="empty-message-template">
+    <div class="empty-message">Seus arquivos aparecerão aqui.</div>
   </template>
 
   <script src="./static/scripts/main.js"></script>

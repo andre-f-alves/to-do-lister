@@ -6,9 +6,9 @@
 @import url('components/button.css');
 @import url('components/icon.css');
 @import url('components/empty-message.css');
+@import url('components/dialog.css');
 
 @import url('layouts/header.css');
 @import url('layouts/main-content-container.css');
 @import url('layouts/sidebar.css');
 @import url('layouts/main.css');
-@import url('layouts/dialog.css');

@@ -1,4 +1,5 @@
 .main-content-container {
   position: relative;
   height: calc(100% - var(--header-height));
+  background-color: var(--contrast-color);
 }

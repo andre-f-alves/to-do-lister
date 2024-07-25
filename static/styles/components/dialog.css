@@ -20,7 +20,6 @@
   border: 1px solid black;
   border-radius: 5px;
   font-size: .9em;
-  box-shadow: none;
 }
 
 #file-name-input:focus-visible,
@@ -37,9 +36,7 @@
 
 .form-button {
   padding: 9px;
-  border: none;
   border-radius: 5px;
-  background-color: transparent;
   font-weight: bold;
 }
 
@@ -48,7 +45,13 @@
   background-color: var(--accent-color);
 }
 
-#cancel-button {
+@media screen and (hover: hover) {
+  #submit-button:enabled:hover {
+    filter: brightness(.9);
+  }
+}
+
+.cancel-button {
   border: 2px solid var(--accent-color);
   background-color: white;
 }

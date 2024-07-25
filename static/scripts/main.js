@@ -29,8 +29,8 @@ function toggleSidebarVisibility() {
 
 function addFile(file) {
   const fileList = document.getElementById('file-list')
-  const template = document.getElementById('file-list-item-template')
-  const fileListItemTemplate = template.content.querySelector('.file-list-item')
+  const fileListItemTemplate = document.getElementById('file-list-item-template')
+    .content.querySelector('.file-list-item')
 
   const fileListItem = document.importNode(fileListItemTemplate, true)
   const fileLink = fileListItem.firstElementChild
@@ -38,8 +38,8 @@ function addFile(file) {
   fileLink.textContent = file
   fileLink.title = file
 
-  if (document.getElementById('empty-list-message')) {
-    fileList.removeChild(document.getElementById('empty-list-message'))
+  if (fileList.querySelector('.empty-message')) {
+    fileList.removeChild(fileList.querySelector('.empty-message'))
   }
 
   fileList.appendChild(fileListItem)

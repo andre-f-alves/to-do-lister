@@ -1,29 +1,30 @@
 button {
+  border: none;
   cursor: pointer;
+  user-select: none;
 }
 
-button:enabled:active {
-  filter: brightness(.7) !important;
+button:has(.icon) {
+  position: relative;
 }
 
-button:enabled:focus-visible {
-  filter: brightness(.9);
+@media screen and (hover: hover) {
+  button:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+button:focus-visible {
+  background-color: var(--hover-color);
   outline: none;
+}
+
+button:active {
+  background-color: var(--active-button-color);
 }
 
 button:disabled {
   border-color: var(--disabled-button-color) !important;
   background-color: var(--disabled-button-color) !important;
   cursor: default;
-}
-
-button:has(.icon),
-.folder-icon-container {
-  position: relative;
-}
-
-@media screen and (hover: hover) {
-  button:enabled:hover {
-    filter: brightness(.9);
-  }
 }

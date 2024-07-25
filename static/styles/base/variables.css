@@ -3,7 +3,12 @@
   --sidebar-width: min(270px, 70vw);
   
   --accent-color: #ff4500;
-  --accent-color-gradient: linear-gradient(135deg, #ff8457, var(--accent-color), #b63000);
+  --contrast-color: #d1d1d1;
+
+  --accent-color-gradient: linear-gradient(135deg, #ff8d63, var(--accent-color), #a02b00);
+
   --hover-color: #ececec;
+  --dark-hover-color: #c0c0c0;
+  --active-button-color: #aaaaaa;
   --disabled-button-color: #c5c5c5;
 }

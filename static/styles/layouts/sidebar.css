@@ -20,11 +20,10 @@
   background-color: white;
 }
 
-#menu-button {
+.menu-button {
   float: right;
   width: 40px;
   height: 40px;
-  border: none;
   background-color: transparent;
 }
 
@@ -32,15 +31,24 @@
   padding: 5px;
 }
 
-#new-file-button {
+.new-file-button {
   width: 35px;
   height: 35px;
-  border: none;
   border-radius: 100%;
   background-image: var(--accent-color-gradient);
 }
 
-#new-file-button > .icon {
+@media screen and (hover: hover) {
+  .new-file-button:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.new-file-button:active {
+  filter: brightness(.9);
+}
+
+.new-file-button > .icon {
   width: 27px;
   height: 27px;
 }
@@ -59,20 +67,24 @@
 }
 
 .file-list-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr max-content;
   align-items: center;
-  gap: 5px;
   width: 100%;
-  height: 31px;
-  text-align: left;
+  border-radius: 4px;
+}
+
+@media screen and (hover: hover) {
+  .file-list-item:hover {
+    background-color: var(--hover-color);
+  }
 }
 
 .file-link {
-  flex-grow: 1;
-  height: 100%;
-  padding: 3px;
-  border: none;
+  padding: 6px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
   font-size: 1em;
   text-align: left;
   text-wrap: nowrap;
@@ -81,17 +93,50 @@
   background-color: transparent;
 }
 
+@media screen and (hover: hover) {
+  .file-link:hover {
+    text-decoration: underline;
+  }
+}
+
+.file-link:active {
+  background-color: var(--hover-color);
+}
+
+.file-actions,
+.more-actions-button {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
 .file-actions {
-  display: none;
-  padding: 3px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  aspect-ratio: 1 / 1;
   line-height: 0;
 }
 
-.file-delete-button {
+.more-actions-button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+@media screen and (hover: hover) {
+  .more-actions-button:hover {
+    background-color: var(--dark-hover-color);
+  }
+}
+
+.more-actions-button:active {
+  background-color: var(--active-button-color);
+}
+
+.more-actions-button > .icon {
   width: 25px;
   height: 25px;
-  border: none;
-  background-color: transparent;
 }
 
 .general-folders {
@@ -105,51 +150,35 @@
   width: 75%;
   height: 1px;
   margin: 25px auto;
-  background-color: lightgray;
+  background-color: var(--contrast-color);
 }
 
 .folder-link {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content 1fr;
   align-items: center;
   gap: 5px;
+  padding: 3px;
+  border-radius: 4px;
   text-decoration: none;
   color: black;
 }
 
-.folder-icon-container {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 0;
-}
-
-.folder-label {
-  flex-grow: 1;
-}
-
 @media screen and (hover: hover) {
-  #menu-button:hover {
-    background-color: var(--hover-color);
-  }
-
-  .file-list-item:hover {
-    background-color: var(--hover-color);
-  }
-
-  .file-link:hover {
-    text-decoration: underline;
-  }
-
-  .file-list-item:hover .file-actions {
-    display: block;
-  }
-
-  .file-delete-button:hover {
-    background-color: #ff0000b7;
-  }
-
   .folder-link:hover {
     text-decoration: underline;
     background-color: var(--hover-color);
   }
+}
+
+.folder-link:active {
+  background-color: var(--active-button-color);
+}
+
+.folder-icon-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  line-height: 0;
 }
