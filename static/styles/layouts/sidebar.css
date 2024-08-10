@@ -20,11 +20,23 @@
   background-color: white;
 }
 
-.menu-button {
+.sidebar-button {
   float: right;
   width: 40px;
   height: 40px;
   background-color: transparent;
+}
+
+.sidebar-button > .close-sidebar-icon {
+  display: none;
+}
+
+.sidebar.active .sidebar-button > .open-sidebar-icon {
+  display: none;
+}
+
+.sidebar.active .sidebar-button > .close-sidebar-icon {
+  display: block;
 }
 
 .sidebar-actions {
@@ -115,7 +127,6 @@
   align-items: center;
   height: 100%;
   aspect-ratio: 1 / 1;
-  line-height: 0;
 }
 
 .more-actions-button {
@@ -176,7 +187,7 @@
   background-color: var(--active-button-color);
 }
 
-.folder-icon-container {
+.folder-icon-wrapper {
   position: relative;
   width: 30px;
   height: 30px;

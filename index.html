@@ -19,30 +19,31 @@
     <div class="main-content-container">
       <aside id="sidebar" class="sidebar">
         
-        <button type="button" id="menu-button" class="menu-button" title="Abrir barra lateral">
-          <img src="./static/svgs/open-sidebar.svg" alt="Menu" class="icon">
+        <button type="button" id="sidebar-button" class="sidebar-button" title="Mostrar/Ocultar barra lateral">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon open-sidebar-icon"><path d="M508.54-596v232l116.77-116-116.77-116ZM215.38-160q-22.44 0-38.91-16.47Q160-192.94 160-215.38v-529.24q0-22.44 16.47-38.91Q192.94-800 215.38-800h529.24q22.44 0 38.91 16.47Q800-767.06 800-744.62v529.24q0 22.44-16.47 38.91Q767.06-160 744.62-160H215.38Zm138.54-30.77h390.7q9.23 0 16.92-7.69 7.69-7.69 7.69-16.92v-529.24q0-9.23-7.69-16.92-7.69-7.69-16.92-7.69h-390.7v578.46Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon close-sidebar-icon"><path d="M625.31-364v-232L508.54-480l116.77 116ZM215.38-160q-22.44 0-38.91-16.47Q160-192.94 160-215.38v-529.24q0-22.44 16.47-38.91Q192.94-800 215.38-800h529.24q22.44 0 38.91 16.47Q800-767.06 800-744.62v529.24q0 22.44-16.47 38.91Q767.06-160 744.62-160H215.38Zm138.54-30.77h390.7q9.23 0 16.92-7.69 7.69-7.69 7.69-16.92v-529.24q0-9.23-7.69-16.92-7.69-7.69-16.92-7.69h-390.7v578.46Z"/></svg>
         </button>
     
         <div class="sidebar-main-content-container">
           
           <div class="sidebar-actions">
             <button type="button" id="new-file-button" class="new-file-button" title="Criar novo arquivo">
-              <img src="./static/svgs/add.svg" alt="Novo arquivo" class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></svg>
             </button>
           </div>
 
           <div class="file-list-container">
-            <ul id="file-list">
+            <menu id="file-list">
 
-              <div class="empty-message">Seus arquivos aparecerão aqui.</div>
+              <!-- <div class="empty-message">Seus arquivos aparecerão aqui.</div> -->
 
-            </ul>
+            </menu>
           </div>
 
           <div class="general-folders">
             <a href="#" class="folder-link">
-              <span class="folder-icon-container">
-                <img src="./static/svgs/delete.svg" alt="Lixeira" class="icon">
+              <span class="folder-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon"><path d="M261-120q-24.75 0-42.37-17.63Q201-155.25 201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
               </span>
               <span class="folder-label">Lixeira</span>
             </a>
@@ -65,7 +66,7 @@
     <p class="dialog-title">Novo arquivo</p>
 
     <form method="dialog">
-      <input type="text" name="file-name-input" id="file-name-input" placeholder="Digite o nome do arquivo.">
+      <input type="text" name="file-name-input" id="file-name-input" placeholder="Digite o nome do arquivo." required>
 
       <div class="form-button-container">
         <button type="submit" id="submit-button" disabled class="form-button">Salvar</button>
@@ -81,7 +82,7 @@
 
       <span class="file-actions">
         <button type="button" class="more-actions-button" title="Mais ações">
-          <img src="./static/svgs/more-actions.svg" alt="Mais ações" class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon"><path d="M225.55-443.54q-15.1 0-25.71-10.75-10.61-10.74-10.61-25.83 0-15.09 10.75-25.72 10.74-10.62 25.83-10.62 15.09 0 25.91 10.75 10.82 10.74 10.82 25.83 0 15.09-10.87 25.72-10.86 10.62-26.12 10.62Zm254.33 0q-15.09 0-25.72-10.75-10.62-10.74-10.62-25.83 0-15.09 10.75-25.72 10.74-10.62 25.83-10.62 15.09 0 25.72 10.75 10.62 10.74 10.62 25.83 0 15.09-10.75 25.72-10.74 10.62-25.83 10.62Zm254.31 0q-15.09 0-25.91-10.75-10.82-10.74-10.82-25.83 0-15.09 10.87-25.72 10.86-10.62 26.12-10.62 15.1 0 25.71 10.75 10.61 10.74 10.61 25.83 0 15.09-10.75 25.72-10.74 10.62-25.83 10.62Z"/></svg>
         </button>
       </span>
     </li>
