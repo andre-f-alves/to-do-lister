@@ -5,7 +5,7 @@
   --accent-color: #ff4500;
   --contrast-color: #d1d1d1;
 
-  --accent-color-gradient: linear-gradient(135deg, #ff8d63, var(--accent-color), #a02b00);
+  --accent-color-gradient: linear-gradient(135deg, #fd723f, var(--accent-color), #912700);
 
   --hover-color: #ececec;
   --dark-hover-color: #c0c0c0;

@@ -9,12 +9,35 @@ const fileList = document.getElementById('file-list')
 const fileListItemTemplate = document.getElementById('file-list-item-template')
   .content.querySelector('.file-list-item')
 
+const contextMenu = document.getElementById('context-menu')
+const deleteFileButton = document.getElementById('delete-file-button')
+
 function loadFileOnList(fileName, fileID) {
   const fileListItem = document.importNode(fileListItemTemplate, true)
+  const fileLink = fileListItem.firstElementChild
+  const moreActionsButton = fileListItem.querySelector('.more-actions-button')
 
   fileListItem.setAttribute('data-file-id', fileID)
-  fileListItem.firstElementChild.value = fileID
-  fileListItem.firstElementChild.textContent = fileName
+  
+  fileLink.value = fileID
+  fileLink.textContent = fileName
+
+  moreActionsButton.addEventListener('click', function() {
+    const { x, y, width } = this.getBoundingClientRect()
+    const offsetScrollY = fileListItem.scrollTop
+    const fileReference = fileListItem.dataset.fileId
+
+    contextMenu.popover = 'manual'
+    const contextMenuOpen = contextMenu.togglePopover()
+
+    if (!contextMenuOpen && contextMenu.dataset.fileReference !== fileReference) {
+      contextMenu.showPopover()
+    }
+
+    contextMenu.setAttribute('data-file-reference', fileReference)
+    contextMenu.style.left = x + width + 'px'
+    contextMenu.style.top = y - offsetScrollY + 'px'
+  })
 
   fileList.appendChild(fileListItem)
 }
@@ -30,6 +53,12 @@ function createFile(file) {
   localStorage.setItem('nextFileID', String(parseInt(fileID) + 1).padStart(6, '0'))
 
   loadFileOnList(file, fileID)
+}
+
+function deleteFile(fileID) {
+  const fileListItem = document.querySelector(`.file-list-item[data-file-id="${fileID}"]`)
+  localStorage.removeItem(fileID)
+  fileList.removeChild(fileListItem)
 }
 
 sidebarButton.addEventListener('click', () => {
@@ -70,6 +99,11 @@ fileNameDialog.addEventListener('close', function() {
     createFile(this.returnValue)
     this.returnValue = ''
   }
+})
+
+deleteFileButton.addEventListener('click', () => {
+  const fileID = contextMenu.dataset.fileReference
+  deleteFile(fileID)
 })
 
 if (localStorage.getItem('nextFileID') === null) {
