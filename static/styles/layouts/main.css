@@ -19,7 +19,7 @@ main {
   }
 }
 
-.ribbon {
+.ribbon-container {
   width: min(90vw, 800px);
   height: 40px;
   background-color: white;
